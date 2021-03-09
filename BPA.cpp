@@ -21,17 +21,14 @@ bool BPA::expandir(Nodo* x){
    Celda* auxiliar = grilla->celdas[x->posY][x->posX];
    Nodo* aux;
    for(int i=0; i < auxiliar->cantVec; i++){
-      if(auxiliar->vecinos[i]->e==Celda::Estado::Pared){
+      if(auxiliar->vecinos[i]->e==Celda::Estado::Pared)
 	 continue;
-      }
       aux = new Nodo(auxiliar->vecinos[i]->posX, auxiliar->vecinos[i]->posY);
       aux->padre=x;
       grilla->celdas[aux->posY][aux->posX]->setEstado(Celda::Estado::Visitada);
       grilla->display(*window);
       window->display();
-
-      
-      usleep(250);
+      //usleep(200);
 
       if(testObjetivo(aux)){
 	 delete nodoSol;
@@ -59,9 +56,8 @@ void BPA::buscar(){
       }
       aux = frontera.front();
       frontera.pop();
-      if(expandir(aux)){
+      if(expandir(aux))
 	 break;
-      }
    }
    aux = nodoSol->padre;
    while(aux != NULL){

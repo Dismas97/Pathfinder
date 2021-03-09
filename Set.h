@@ -1,3 +1,5 @@
+#ifndef SET_H
+#define SET_H
 #include "Nodo.h"
 
 class Set{
@@ -12,11 +14,11 @@ class Set{
 	    return false;
 	 cursor = cabecera;
 	 curAux = cursor;
-	 while(cursor->sig != NULL && (cursor->posX != x->posX || cursor->posY != x->posY)){
+	 while(cursor->sig != NULL && (*cursor != *x)){
 	    curAux = cursor;
 	    cursor = cursor->sig;
 	 }
-	 return cursor->posX==x->posX && cursor->posY == x->posY;
+	 return *cursor == *x;
       };
       bool insertar(Nodo *x){
 	 if(buscar(x))
@@ -52,3 +54,4 @@ class Set{
 	cabecera=NULL;
       }
 };
+#endif //SET_H

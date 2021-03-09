@@ -18,6 +18,9 @@ class Nodo{
       };
       bool operator==(const Nodo& r) const {
 	 return posX==r.posX && posY == r.posY;
+      };
+      bool operator!=(const Nodo& r) const {
+	 return posX!=r.posX || posY != r.posY;
       } 
 };
 #endif //NODO_H

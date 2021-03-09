@@ -32,7 +32,6 @@ void Celda::draw(RenderWindow &window){
    window.draw(piso);
    window.draw(paredIzq);
    window.draw(paredDer);
-
 }
 
 void Celda::setColor(Color c){

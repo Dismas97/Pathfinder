@@ -10,12 +10,12 @@ class Grilla{
       int objetivo[2];//Guarda la posicion del objetivo
       Celda*** celdas;//Matriz de Punteros celdas
       Vertex linea[2];//Linea que une inicial y objetivo
-      Vector2f aux;//Vector auxiliar para calcular la linea
 
    public:
       Grilla(unsigned int fil, unsigned int col, unsigned int tamCel);
       void setVecinos(int x, int y); //Calcula los vecinos de la celda xy
       void pintarVecinos(int x, int y);//Pinta los vecinos
+      void pintarLinea();
       void display(RenderWindow &window);
       void reset(); //Valor por defecto de la grilla
       void setEstado(int x, int y, Celda::Estado e); //Cambia el estado de la celda xy
